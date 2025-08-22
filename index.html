@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NOOR FOOT WEAR</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+    }
+    header {
+      background-color: #111;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      font-size: 24px;
+      font-weight: bold;
+    }
+    .language-select {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin: 20px;
+    }
+    .language-select button {
+      padding: 10px 15px;
+      border: none;
+      border-radius: 6px;
+      background-color: #111;
+      color: #fff;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    .catalog {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+    .item {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      overflow: hidden;
+      text-align: center;
+      padding-bottom: 15px;
+    }
+    .item img {
+      max-width: 100%;
+      height: auto;
+    }
+    .item h3 {
+      margin: 10px 0 5px;
+      font-size: 18px;
+    }
+    .item p {
+      margin: 0;
+      font-size: 14px;
+      color: #555;
+    }
+    .price {
+      font-size: 16px;
+      font-weight: bold;
+      color: green;
+      margin-top: 8px;
+    }
+  </style>
+  <script>
+    const translations = {
+      en: {
+        productName: "Stylish Running Shoes",
+        description: "Comfortable and lightweight footwear for daily use.",
+        price: "Price: ₹999"
+      },
+      hi: {
+        productName: "स्टाइलिश रनिंग शूज़",
+        description: "आरामदायक और हल्के जूते दैनिक उपयोग के लिए।",
+        price: "कीमत: ₹999"
+      },
+      te: {
+        productName: "స్టైలిష్ రన్నింగ్ షూస్",
+        description: "ప్రతిరోజూ వాడటానికి సౌకర్యవంతమైన మరియు తేలికపాటి షూస్.",
+        price: "ధర: ₹999"
+      },
+      roman: {
+        productName: "Stylish Running Shoes",
+        description: "Aaramdayak aur halka shoes daily use ke liye.",
+        price: "Price: ₹999"
+      }
+    };
+
+    function setLanguage(lang) {
+      document.getElementById("pname").innerText = translations[lang].productName;
+      document.getElementById("pdesc").innerText = translations[lang].description;
+      document.getElementById("pprice").innerText = translations[lang].price;
+    }
+  </script>
+</head>
+<body>
+  <header>NOOR FOOT WEAR</header>
+
+  <div class="language-select">
+    <button onclick="setLanguage('en')">English</button>
+    <button onclick="setLanguage('hi')">Hindi</button>
+    <button onclick="setLanguage('te')">Telugu</button>
+    <button onclick="setLanguage('roman')">Roman English</button>
+  </div>
+
+  <div class="catalog">
+    <div class="item">
+      <img src="https://via.placeholder.com/250x200.png?text=Shoes+Image" alt="Shoes" />
+      <h3 id="pname">Stylish Running Shoes</h3>
+      <p id="pdesc">Comfortable and lightweight footwear for daily use.</p>
+      <p class="price" id="pprice">Price: ₹999</p>
+    </div>
+  </div>
+
+</body>
+</html>
